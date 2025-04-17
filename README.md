@@ -5,18 +5,18 @@ Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
 
-    Python 3.x
+    Python 3.x: Download from python.org.
 
-    pip (Python package installer)
+    pip (Python package installer): This should come with Python 3.x, but you can check by running pip --version in the command prompt.
 
-    Git
+    Git: Download from git-scm.com.
 
-    Visual Studio Code or any code editor of your choice
+    Visual Studio Code (Optional): You can use any text editor, but Visual Studio Code is recommended.
 
 Setup
 1. Clone the repository
 
-Clone the repository to your local machine using the following command:
+Clone the repository to your local machine using Git. Open a command prompt and run:
 
 git clone https://github.com/your-username/iiot_simulation.git
 
@@ -32,30 +32,18 @@ python -m venv venv
 
 Activate the virtual environment:
 
-    On Windows:
-
 .\venv\Scripts\activate
 
-On Linux/macOS:
+You should now see (venv) in your command prompt, indicating that the virtual environment is active.
+3. Install Required Packages
 
-    source venv/bin/activate
+Install the necessary dependencies by running the following commands in your activated virtual environment:
 
-3. Install the required packages
-
-Install the necessary dependencies from the requirements.txt file:
-
-pip install -r requirements.txt
-
-If the requirements.txt is not provided, you can manually install the packages:
-
-pip install paho-mqtt
-pip install coapthon
-pip install opcua
-pip install matplotlib
+pip install pandas numpy paho-mqtt aiocoap asyncua matplotlib
 
 4. Run the Sensor Simulations
 
-To run the different sensor simulation scripts in separate terminals:
+To run the different sensor simulation scripts, open three separate command prompt windows and run the following commands in each:
 MQTT Sensor Simulation:
 
 python mqtt_sensor_simulation.py
@@ -70,16 +58,22 @@ python opcua_sensor_simulation.py
 
 5. Visualize the Data
 
-Once all three simulations are running, you can start the data visualization scripts to view real-time data for temperature and humidity:
+Once all three simulations are running, you can start the data visualization scripts to view real-time data for temperature and humidity.
 MQTT Visualization:
+
+Open a new command prompt and run:
 
 python data_visualization_mqtt.py
 
 CoAP Visualization:
 
+Open another command prompt and run:
+
 python data_visualization_coap.py
 
 OPC UA Visualization:
+
+Finally, open another command prompt and run:
 
 python data_visualization_opcua.py
 
@@ -100,12 +94,8 @@ Repository Structure
 
     data_visualization_opcua.py: Visualizes OPC UA sensor data (temperature and humidity).
 
-    requirements.txt: Contains the list of required Python packages.
-
     README.md: Instructions for setting up and running the project.
 
 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-You can modify the repository URL, file names, and any other details that match your specific project setup.
